@@ -5,5 +5,5 @@ const server = http.createServer((req,res)=>{
     console.log(req)
 })
 server.listen(5000, ()=>{
-    console.log('Server is listening')
+    console.log('Server is listening on port 5000')
 })
