@@ -1,0 +1,20 @@
+name: CI CD pipeline
+run-name: ${{github.actor}} is running the task
+on:
+    push: 
+        branches: 
+            - master
+jobs:
+    start: 
+        runs-on: ubuntu-latest
+        env:
+            PORT: 5001
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: npm ci
+            
+            - name: Run app
+              run: npm start
